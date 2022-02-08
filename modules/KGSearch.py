@@ -61,3 +61,45 @@ class KGSearch(object):
                 res_dict[content] = [_id]
 
         return res_dict
+
+
+    def search_subject(self, query:str) -> list:
+        """Return ID related to the query from subjects
+
+        Args:
+            query (str): the term to be searched
+
+        Returns:
+            list: list of related ids
+        """
+        if query in self.sub_dict:
+            return self.sub_dict[query]
+        return []
+
+
+    def search_predicate(self, query:str) -> list:
+        """Return ID related to the query from predicates
+
+        Args:
+            query (str): the term to be searched
+
+        Returns:
+            list: list of related ids
+        """
+        if query in self.pred_dict:
+            return self.pred_dict[query]
+        return []
+
+
+    def search_object(self, query:str) -> list:
+        """Return ID related to the query from objects
+
+        Args:
+            query (str): the term to be searched
+
+        Returns:
+            list: list of related ids
+        """
+        if query in self.obj_dict:
+            return self.obj_dict[query]
+        return []
